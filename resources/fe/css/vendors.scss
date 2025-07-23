@@ -1,0 +1,20 @@
+@import "../../../node_modules/bootstrap/scss/functions";
+
+//variable override
+@import "./scss-override/variables";
+
+//default variables
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/variables-dark";
+
+
+//customize
+@import "./vendors/fancybox";
+//@import "./vendors/fullcalendar";
+@import "./vendors/swiper";
+//@import "./vendors/sweetalert2";
+//@import "./vendors/tom-select";
+//@import "./vendors/freeze-ui";
+//@import "./vendors/simplebar";
+//@import "./vendors/pickaday";
+@import "../../../node_modules/animate.css/animate.css";

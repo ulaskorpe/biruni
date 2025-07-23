@@ -1,0 +1,100 @@
+/* Horizontal Timeline */
+.timeline-horizontal {
+    overflow-x: auto;
+    width: 100%;
+    padding-bottom: 45px;
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        list-style: none;
+        border-bottom: 2px solid $primary;
+        margin-bottom: 0;
+
+        > li {
+            width: 200px;
+            min-width: 160px;
+            position: relative;
+            padding: 0 1.5rem 28px 1.5rem;
+            border-bottom: 2px solid $primary;
+            margin-bottom: -2px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            > div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 2px;
+                border-left: 1px dashed $primary;
+                top: calc(50% - 20px);
+                bottom: 7px;
+                left: 50%;
+                margin-left: -1px;
+            }
+
+            > span {
+                position: absolute;
+                display: block;
+                text-align: center;
+                height: 30px;
+                bottom: -40px;
+                font-size: 1.2rem;
+                color: $primary;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+.timeline {
+    
+    > .timeline-item {
+
+        position:relative;
+        padding-left:50px;
+        padding-bottom:2.5rem;
+
+        &:before {
+            background-color:var(--bs-secondary);
+            border-radius: 50%;
+            content: "";
+            display: block;
+            height: 20px;
+            position: absolute;
+            top: 14px;
+            left: 0;
+            width: 20px;
+            z-index:2;
+        }
+        &:after {
+            content: "";
+            width: 2px;
+            background-color: var(--bs-secondary);
+            display: block;
+            position: absolute;
+            top: 25px;
+            bottom: -20px;
+            left: 9px;
+            z-index:1;
+        }
+
+        &:last-child {
+            &:after {
+                content: none;
+            }
+        }
+
+    }
+
+}

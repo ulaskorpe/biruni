@@ -1,0 +1,1 @@
+{{-- app\View\Components\Elements\Index.php uzerinden dinamik geliyor. swithc ile de yapilabilir. --}}

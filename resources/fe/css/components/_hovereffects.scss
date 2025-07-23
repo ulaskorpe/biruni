@@ -1,0 +1,58 @@
+.hover-image-scale {
+    overflow: hidden;
+    img {
+        transition: all 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+    &:hover {
+        img {
+            transform: scale(1.1) rotate(-3deg);
+        }
+    }
+}
+
+.hover-scale {
+    transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.hover-up {
+    transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+    &:hover {
+        transform: translateY(-15px);
+    }
+}
+
+.has-hover-opacity-items {
+
+    .hover-opacity-item {
+        transition:opacity .3s ease;
+    }
+
+    &:hover {
+        .hover-opacity-item:not(:hover) {
+            opacity:.7;
+        }
+    }
+
+}
+
+
+.parent-hover-show {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+*:hover > .parent-hover-show {
+    opacity: 1;
+}
+
+.hover-colorize {
+    filter: grayscale(100%);
+    transition: all .3s ease;
+
+    &:hover {
+        filter: none;
+    }
+}

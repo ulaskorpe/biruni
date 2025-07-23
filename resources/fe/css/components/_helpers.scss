@@ -1,0 +1,253 @@
+//background
+
+.bg-cover {
+    background-size: cover !important;
+    background-repeat: no-repeat;
+}
+.bg-auto {
+    background-size: auto !important;
+    background-repeat: no-repeat;
+}
+.bg-contain {
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.bg-center {
+    background-position: center !important;
+}
+.bg-center-top {
+    background-position: center top !important;
+}
+.bg-center-bottom {
+    background-position: center bottom !important;
+}
+.bg-left-top {
+    background-position: left top !important;
+}
+.bg-left-center {
+    background-position: left center !important;
+}
+.bg-left-bottom {
+    background-position: left bottom !important;
+}
+.bg-right-top {
+    background-position: right top !important;
+}
+.bg-right-center {
+    background-position: right center !important;
+}
+.bg-right-bottom {
+    background-position: right bottom !important;
+}
+
+.bg-video {
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+@each $name, $color in $theme-colors {
+    .bg-v-gradient-#{$name} {
+        background: linear-gradient(
+            180deg,
+            rgba(red($color), green($color), blue($color), 1) 0%,
+            rgba(red($color), green($color), blue($color), 0) 100%
+        );
+    }
+
+    .bg-h-gradient-#{$name} {
+        background: linear-gradient(
+            90deg,
+            rgba(red($color), green($color), blue($color), 0.5) 50%,
+            rgba(red($color), green($color), blue($color), 0) 100%
+        );
+    }
+
+    .bg-v-gradient-reverse-#{$name} {
+        background: linear-gradient(
+            180deg,
+            rgba(red($color), green($color), blue($color), 0) 0%,
+            rgba(red($color), green($color), blue($color), 1) 100%
+        );
+    }
+
+    .bg-h-gradient-reverse-#{$name} {
+        background: linear-gradient(
+            90deg,
+            rgba(red($color), green($color), blue($color), 0) 0%,
+            rgba(red($color), green($color), blue($color), 0.5) 50%,
+            rgba(red($color), green($color), blue($color), 1) 100%
+        );
+    }
+
+    .bg-radial-gradient-#{$name} {
+        background: linear-gradient(
+            90deg,
+            rgba(red($color), green($color), blue($color), 1) 0%,
+            rgba(red($color), green($color), blue($color), 0.85) 50%,
+            rgba(red($color), green($color), blue($color), 1) 100%
+        );
+    }
+
+    .text-hover-#{$name} {
+        &:hover {
+            color: $color !important;
+        }
+    }
+
+    .bg-hover-#{$name} {
+        transition: 0.2s ease-in-out background-color;
+        &:hover {
+            background-color: $color !important;
+        }
+    }
+}
+
+// @each $name1, $color1 in $theme-colors {
+//     @each $name2, $color2 in $theme-colors {
+//         .text-gradient-#{$name1}-#{$name2} {
+//             color: transparent;
+//             background: linear-gradient(90deg, $color1 0%, $color2 100%);
+//             -webkit-background-clip: text;
+//             background-clip: text;
+//         }
+//     }
+// }
+
+// @each $name, $color in $theme-colors {
+//     .text-gradient-#{$name} {
+//         color: transparent;
+//         background: linear-gradient(
+//             90deg,
+//             $color 0%,
+//             mix($color, #ffffff, 30%) 70%,
+//             rgba(red($color), green($color), blue($color), 0) 100%
+//         );
+//         background-size: 150%;
+//         background-position: left;
+//         -webkit-background-clip: text;
+//         background-clip: text;
+//     }
+// }
+
+.font-title {
+    font-family: $headings-font-family;
+}
+.font-body {
+    font-family: $font-family-base;
+}
+.fs-xs {
+    font-size: $font-size-xs;
+}
+.fs-sm {
+    font-size: $font-size-sm;
+}
+.fs-lg {
+    font-size: $font-size-lg;
+}
+
+.text-shadow {
+    text-shadow: 0 0 2px #000;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.extend-end {
+    scroll-margin: inherit;
+    @media (min-width: 576px) {
+        margin-right: calc((100vw - 540px) / -2);
+    }
+    @media (min-width: 768px) {
+        margin-right: calc((100vw - 720px) / -2);
+    }
+    @media (min-width: 992px) {
+        margin-right: calc((100vw - 960px) / -2);
+    }
+    @media (min-width: 1200px) {
+        margin-right: calc((100vw - 1140px) / -2);
+    }
+    @media (min-width: 1400px) {
+        margin-right: calc((100vw - 1320px) / -2);
+    }
+}
+.extend-start {
+    @media (min-width: 576px) {
+        margin-left: calc((100vw - 540px) / -2);
+    }
+    @media (min-width: 768px) {
+        margin-left: calc((100vw - 720px) / -2);
+    }
+    @media (min-width: 992px) {
+        margin-left: calc((100vw - 960px) / -2);
+    }
+    @media (min-width: 1200px) {
+        margin-left: calc((100vw - 1140px) / -2);
+    }
+    @media (min-width: 1400px) {
+        margin-left: calc((100vw - 1320px) / -2);
+    }
+}
+
+.bigtitle-responsive {
+    font-size: clamp(30px, 4vw, 56px);
+}
+.title-responsive {
+    font-size: clamp(20px, 4vw, 38px);
+}
+.subtitle-responsive {
+    font-size: clamp(18px, 2vw, 28px);
+}
+.lead-responsive {
+    font-size: clamp(16px, 1.8vw, 20px);
+}
+.p-responsive {
+    font-size: var(--bs-body-font-size);
+}
+
+.text-wavy {
+    text-decoration: underline;
+    text-underline-offset: 0.375rem;
+    text-decoration-style: wavy;
+}
+
+.overflow-unset {
+    overflow: unset !important;
+}
+
+.img-flip-h {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+.img-flip-v {
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+}
+
+.placeholder-white::-webkit-input-placeholder {
+    color: #fff;
+} /* Chrome, Safari, Edge */
+.placeholder-white:-moz-placeholder {
+    color: #fff;
+} /* Firefox 4-18 */
+.placeholder-white::-moz-placeholder {
+    color: #fff;
+} /* Firefox 19+ */
+.placeholder-white:-ms-input-placeholder {
+    color: #fff;
+} /* Internet Explorer 10-11 */
+
+.rotate-90 {
+    transform: rotate(90deg);
+}
+.rotate-180 {
+    transform: rotate(180deg);
+}
+.rotate-270 {
+    transform: rotate(270deg);
+}

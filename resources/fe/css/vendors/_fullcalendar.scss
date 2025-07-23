@@ -1,0 +1,43 @@
+.fc-button {
+    box-shadow:none !important;
+    background-color: transparent !important;
+    border:none  !important;
+    color:$dark !important;
+}
+
+.fc-dayGridMonth-button,
+.fc-listMonth-button {
+    border-radius: 16px !important;
+    background-color: $secondary !important;
+    font-weight: 500 !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    z-index:1 !important;
+    &.fc-button-active {
+        background-color: $primary !important;
+        color:$white !important;
+        z-index:2 !important;
+    }
+}
+
+.fc-dayGridMonth-button {
+    padding-right: 40px !important;
+    &.fc-button-active {
+        padding-right: 15px !important;
+    }
+}
+
+.fc-listMonth-button {
+    padding-left: 40px !important;
+    margin-left:-32px !important;
+    &.fc-button-active {
+        padding-left: 15px !important;
+    }
+}
+
+.fc-h-event {
+    background-color: $secondary !important;
+    > .fc-event-main {
+        color:$dark !important;
+    }
+}

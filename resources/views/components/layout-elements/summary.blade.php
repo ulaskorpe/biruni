@@ -1,0 +1,1 @@
+{!! Str::replace('SUMMARY', $summary, $element['data']['elemHtml']) !!}

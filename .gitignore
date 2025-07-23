@@ -1,0 +1,60 @@
+# Laravel specific
+/vendor/
+/node_modules/
+/public/storage
+
+/public/js
+/public/info.php
+/storage
+/storage/*.key
+.env
+.env.*.backup
+
+server_env.txt
+eskienv
+config/.env
+storage/app/client_secret.json
+
+Homestead.yaml
+Homestead.json
+
+# Ignore IDE/editor specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+*.log
+*.temp
+
+# Ignore Composer dependencies and cache
+composer.lock
+
+# Ignore npm/Yarn related files
+package-lock.json
+yarn.lock
+
+# Ignore Laravel Mix file if applicable
+/webpack.mix.js
+/public/hot
+/public/mix-manifest.json
+/public/js/*.map
+/public/css/*.map
+
+# Ignore testing files
+.phpunit.result.cache
+/.php_cs.cache
+
+# Ignore backup files
+*.bak
+*.backup
+
+# Ignore SASS/SCSS cache
+.sass-cache
+
+# Ignore temporary local files
+*.local
+*.env.local

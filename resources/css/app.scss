@@ -1,0 +1,207 @@
+//@import 'element-plus/dist/index.css';
+
+//@import "primevue/resources/themes/fluent-light/theme.css";
+//@import "primevue/resources/themes/lara-light-blue/theme.css";
+//@import "primevue/resources/themes/saga-blue/theme.css";
+//@import "./keenicons/duotone/style.css";
+//@import "./keenicons/outline/style.css";
+//@import "./keenicons/solid/style.css";
+@import "../../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+//@import "./sass/element-ui.dark";
+
+@import "../../node_modules/dropzone/dist/dropzone.css";
+@import "./sass/plugins";
+@import "./sass/style";
+
+#app {
+    display:flex;
+    flex:1;
+    flex-direction: column;
+    height:100%;
+}
+
+[data-kt-app-layout=dark-sidebar] .app-sidebar .menu > div {
+
+    > .menu-item .menu-heading {
+        color: #626671 !important;
+    }
+
+    > .menu-item .menu-link {
+        color: #DBDFE9;
+    }
+
+    > .menu-item > .menu-link > .menu-title {
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
+
+    > .menu-item .menu-sub .menu-item .menu-link .menu-title {
+        color: #888A8E;
+    }
+
+    > .menu-item:not(.here) .menu-link:hover:not(.disabled):not(.active):not(.here) .menu-title {
+        color: var(--bs-primary-inverse);
+    }
+    
+    > .menu-item:not(.here) .menu-link:hover:not(.disabled):not(.active):not(.here) .menu-icon {
+        color: var(--bs-primary-inverse) !important;
+    }
+
+}
+
+.p-inputtext:enabled:focus,
+.p-multiselect:not(.p-disabled).p-focus,
+.p-button:enabled:focus {
+    box-shadow: none!important;
+}
+
+.p-dialog:not(.p-confirm-dialog):not(.p-dialog-fullscreen) {
+
+    width:95vw !important;
+
+    @media (min-width: 992px) {
+        width:75vw !important;
+    }
+    
+    .p-dialog-header {
+        background-color: $light;
+    }
+    .p-dialog-content {
+        padding-top:24px;
+
+        .p-tabview-nav-container {
+            position:sticky;
+            top:-24px;
+        }
+    }
+
+    .p-tabview-nav {
+        padding-left:0;
+    }
+}
+
+.p-dialog-fullscreen {
+    position:fixed;
+    transition:none !important;
+    transform: none !important;
+    width: calc(100vw - 30px) !important;
+    height: calc(100vh - 30px) !important;
+    top: 15px !important;
+    left: 15px !important;
+    max-height: calc(100% - 30px) !important;
+    @media (min-width: 992px) {
+        width: calc(100vw - 60px) !important;
+        height: calc(100vh - 60px) !important;
+        max-height: calc(100% - 60px);
+        top: 30px !important;
+        left: 30px !important;
+    }
+    .p-dialog-content {
+        flex-grow: 1;
+    }
+}
+
+.p-blockui {
+    &.p-component-overlay {
+        background-color: rgba(0, 0, 0, 0.1);
+        &::after {
+            content:"";
+            position:absolute;
+            left:50%;
+            top:50%;
+            transform: translate(-50%,-50%);
+            width:50px;
+            height:50px;
+            border-radius: 50px;
+            border: 5px solid rgba(255,255,255,.5);
+            border-top-color: $white;
+            animation: loading 2s linear infinite;
+        }
+    }
+}
+
+.p-dropdown-items,
+.p-multiselect-items,
+.p-autocomplete-items {
+    padding: .75rem 0;
+    margin:0;
+}
+
+.p-column-title {
+    white-space: nowrap;
+}
+
+.text-end > .p-column-header-content {
+    text-align: right !important;
+    justify-content: end !important;
+}
+
+.p-multiselect.p-multiselect-chip .p-multiselect-token {
+    padding: 0.4rem 1rem;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.p-datatable-header .p-inputwrapper-filled.p-multiselect.p-multiselect-chip .p-multiselect-label {
+    padding:.6rem .75rem;
+}
+
+@keyframes loading {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+}
+
+.dt-card {
+    margin-bottom: 0 !important;
+    > .card-body {
+        padding:0 !important;
+        height:calc(100vh - 340px);
+    
+        @media (min-width: 768px) {
+            height:calc(100vh - 340px);
+        }
+
+        @media (min-width: 992px) {
+            height:calc(100vh - 365px)
+        }
+    
+        @media (min-width: 1400px) {
+            height:calc(100vh - 375px)
+        }
+    }
+}
+
+.btn-icon > i {
+    padding:0 !important;
+}
+
+.general-message {
+    top:60px;
+    z-index:1;
+}
+
+.ql-editor {
+    h1,h2,h3,h4,h5,h6 {
+        margin-bottom:1rem !important;
+    }
+    p {
+        margin-bottom:.7rem !important
+    }
+}
+
+.ghost {
+    opacity:.3;
+    background-color: #000;
+    border-radius: 4px;
+}
+.tox-form__group {
+    margin-bottom:.9rem !important;
+}
+.mce-content-body {
+    margin:1rem;
+    font-size:14px !important;
+}

@@ -1,0 +1,66 @@
+html.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown),
+body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown):not(.modal-open) {
+	overflow-y: initial !important;
+
+	&:not(.sweetalert2-nopadding) {
+		padding-right: 0 !important; 
+	}
+}
+
+// Popup
+.swal2-popup {
+	padding: 1.4rem;
+	width:25rem;
+
+	.swal2-title {
+		font-weight: 500;
+		font-size: .9rem;
+		padding:0;
+	}
+
+	.swal2-html-container {
+		margin: 1rem auto 0 auto;
+		padding-bottom:5px;
+	}
+
+	.swal2-html-container,
+	.swal2-content {
+		font-weight: normal;
+		font-size: .9rem;
+		margin-top: 1.2rem;
+	}
+
+	.btn {
+		margin: 15px 5px 0;
+	}
+
+	.swal2-styled {
+		&:focus {
+			box-shadow: none;
+		}
+	}
+
+	.swal2-actions {
+		margin: 1rem auto 0 auto;
+	}
+}
+
+// Container
+.swal2-container {
+	overflow-y: hidden !important;
+
+	// Content
+	.swal2-html-container {
+		max-height: 200px;
+		overflow: auto;
+		//margin-top:.8rem;
+	}
+}
+
+body.swal2-height-auto {
+	height: 100% !important;
+}
+
+.swal2-icon {
+	margin:1rem auto 1.3rem auto;
+}

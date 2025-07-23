@@ -1,0 +1,1274 @@
+$utilities: map-merge(
+  $utilities,
+  (
+    "align": (
+      property: vertical-align,
+      class: align,
+      values: baseline top middle bottom text-bottom text-top,
+    ),
+    // scss-docs-end utils-vertical-align
+    // scss-docs-start utils-float
+    "float":
+      (
+        responsive: true,
+        property: float,
+        values: (
+          start: left,
+          end: right,
+          none: none,
+        ),
+      ),
+    // scss-docs-end utils-float
+    // Opacity utilities
+    // scss-docs-start utils-opacity
+    "opacity":
+      (
+        property: opacity,
+        values: (
+          0: 0,
+          5: 0.05,
+          10: 0.1,
+          15: 0.15,
+          20: 0.20,
+          25: 0.25,
+          30: 0.30,
+          35: 0.35,
+          40: 0.35,
+          50: 0.5,
+          60: 0.6,
+          70: 0.7,
+          75: 0.75,
+          80: 0.8,
+          85: 0.85,
+          90: 0.90,
+          95: 0.95,
+          100: 1,
+        ),
+      ),
+    // scss-docs-end utils-opacity
+    // scss-docs-start utils-overflow
+    "overflow":
+      (
+        property: overflow,
+        values: auto hidden visible scroll,
+      ),
+    "overflow-x": (
+      property: overflow-x,
+      values: auto hidden visible scroll,
+    ),
+    "overflow-y": (
+      property: overflow-y,
+      values: auto hidden visible scroll,
+    ),
+    // scss-docs-end utils-overflow
+    // scss-docs-start utils-display
+    "display":
+      (
+        responsive: true,
+        print: true,
+        property: display,
+        class: d,
+        values: inline inline-block block grid table table-row table-cell flex
+          inline-flex none,
+      ),
+    // scss-docs-end utils-display
+    // scss-docs-start utils-shadow
+    "shadow":
+      (
+        property: box-shadow,
+        class: shadow,
+        values: (
+          null: $box-shadow,
+          sm: $box-shadow-sm,
+          lg: $box-shadow-lg,
+          none: none,
+        ),
+      ),
+    // scss-docs-end utils-shadow
+    // scss-docs-start utils-position
+    "position":
+      (
+        responsive: true,
+        property: position,
+        values: static relative absolute fixed sticky,
+      ),
+    "top": (
+      responsive: true,
+      property: top,
+      values: $position-values,
+    ),
+    "bottom": (
+      responsive: true,
+      property: bottom,
+      values: $position-values,
+    ),
+    "start": (
+      responsive: true,
+      property: left,
+      class: start,
+      values: $position-values,
+    ),
+    "end": (
+      responsive: true,
+      property: right,
+      class: end,
+      values: $position-values,
+    ),
+    "translate-middle": (
+      property: transform,
+      class: translate-middle,
+      values: (
+        null: translate(-50%, -50%),
+        x: translateX(-50%),
+        y: translateY(-50%),
+      ),
+    ),
+    // scss-docs-end utils-position
+    // scss-docs-start utils-borders
+    "border":
+      (
+        responsive: true,
+        property: border,
+        values: (
+          null: var(--#{$prefix}border-width) var(--#{$prefix}border-style)
+            var(--#{$prefix}border-color),
+          0: 0,
+        ),
+      ),
+    "border-top": (
+      responsive: true,
+      property: border-top,
+      values: (
+        null: var(--#{$prefix}border-width) var(--#{$prefix}border-style)
+          var(--#{$prefix}border-color),
+        0: 0,
+      ),
+    ),
+    "border-end": (
+      responsive: true,
+      property: border-right,
+      class: border-end,
+      values: (
+        null: var(--#{$prefix}border-width) var(--#{$prefix}border-style)
+          var(--#{$prefix}border-color),
+        0: 0,
+      ),
+    ),
+    "border-bottom": (
+      responsive: true,
+      property: border-bottom,
+      values: (
+        null: var(--#{$prefix}border-width) var(--#{$prefix}border-style)
+          var(--#{$prefix}border-color),
+        0: 0,
+      ),
+    ),
+    "border-start": (
+      responsive: true,
+      property: border-left,
+      class: border-start,
+      values: (
+        null: var(--#{$prefix}border-width) var(--#{$prefix}border-style)
+          var(--#{$prefix}border-color),
+        0: 0,
+      ),
+    ),
+    "border-color": (
+      property: border-color,
+      class: border,
+      local-vars: (
+        "border-opacity": 1,
+      ),
+      values: $utilities-border-colors,
+    ),
+    "border-width": (
+      css-var: true,
+      css-variable-name: border-width,
+      class: border,
+      values: $border-widths,
+    ),
+    "border-opacity": (
+      css-var: true,
+      class: border-opacity,
+      values: (
+        10: 0.1,
+        25: 0.25,
+        50: 0.5,
+        75: 0.75,
+        100: 1,
+      ),
+    ),
+    // scss-docs-end utils-borders
+    // Sizing utilities
+    // scss-docs-start utils-sizing
+    "width":
+      (
+        responsive: true,
+        property: width,
+        class: w,
+        values: (
+          25: 25%,
+          30: 30%,
+          33: 33%,
+          50: 50%,
+          66: 66%,
+          70: 70%,
+          75: 75%,
+          85: 85%,
+          100: 100%,
+          auto: auto,
+        ),
+      ),
+    "max-width": (
+      responsive: true,
+      property: max-width,
+      class: mw,
+      values: (
+        25: 25%,
+        50: 50%,
+        75: 75%,
+        100: 100%,
+        auto: auto,
+        25px: 25px,
+        30px: 30px,
+        35px: 35px,
+        40px: 40px,
+        50px: 50px,
+        75px: 75px,
+        100px: 100px,
+        125px: 125px,
+        150px: 150px,
+        175px: 175px,
+        200px: 200px,
+        225px: 225px,
+        250px: 250px,
+        275px: 275px,
+        300px: 300px,
+        400px: 400px,
+        500px: 500px,
+      ),
+    ),
+    "viewport-width": (
+      responsive: true,
+      property: width,
+      class: vw,
+      values: (
+        15: 15vw,
+        20: 20vw,
+        25: 25vw,
+        30: 30vw,
+        35: 35vw,
+        40: 40vw,
+        45: 45vw,
+        50: 50vw,
+        55: 55vw,
+        60: 60vw,
+        65: 65vw,
+        70: 70vw,
+        75: 75vw,
+        80: 80vw,
+        85: 85vw,
+        90: 90vw,
+        95: 95vw,
+        100: 100vw,
+      ),
+    ),
+    "min-viewport-width": (
+      responsive: true,
+      property: min-width,
+      class: min-vw,
+      values: (
+        15: 15vw,
+        20: 20vw,
+        25: 25vw,
+        30: 30vw,
+        35: 35vw,
+        40: 40vw,
+        45: 45vw,
+        50: 50vw,
+        55: 55vw,
+        60: 60vw,
+        65: 65vw,
+        70: 70vw,
+        75: 75vw,
+        80: 80vw,
+        85: 85vw,
+        90: 90vw,
+        95: 95vw,
+        100: 100vw,
+      ),
+    ),
+    "height": (
+      responsive: true,
+      property: height,
+      class: h,
+      values: (
+        25: 25%,
+        33: 33%,
+        50: 50%,
+        66: 66%,
+        75: 75%,
+        100: 100%,
+        auto: auto,
+      ),
+    ),
+    "max-height": (
+      responsive: true,
+      property: max-height,
+      class: mh,
+      values: (
+        100: 100%,
+      ),
+    ),
+    "viewport-height": (
+      responsive: true,
+      property: height,
+      class: vh,
+      values: (
+        15: 15vh,
+        20: 20vh,
+        25: 25vh,
+        30: 30vh,
+        35: 35vh,
+        40: 40vh,
+        45: 45vh,
+        50: 50vh,
+        55: 55vh,
+        60: 60vh,
+        65: 65vh,
+        70: 70vh,
+        75: 75vh,
+        80: 80vh,
+        85: 85vh,
+        90: 90vh,
+        95: 95vh,
+        100: 100vh,
+      ),
+    ),
+    "min-viewport-height": (
+      responsive: true,
+      property: min-height,
+      class: min-vh,
+      values: (
+        25: 25vh,
+        50: 50vh,
+        75: 75vh,
+        100: 100vh,
+      ),
+    ),
+    // scss-docs-end utils-sizing
+    // Flex utilities
+    // scss-docs-start utils-flex
+    "flex":
+      (
+        responsive: true,
+        property: flex,
+        values: (
+          fill: 1 1 auto,
+          1:1,
+          2:2,
+          3:3,
+          4:4,
+          5:5,
+          6:6,
+          7:7,
+          8:8,
+          9:9,
+          10:10
+        ),
+      ),
+    "flex-direction": (
+      responsive: true,
+      property: flex-direction,
+      class: flex,
+      values: row column row-reverse column-reverse,
+    ),
+    "flex-grow": (
+      responsive: true,
+      property: flex-grow,
+      class: flex,
+      values: (
+        grow-0: 0,
+        grow-1: 1,
+      ),
+    ),
+    "flex-shrink": (
+      responsive: true,
+      property: flex-shrink,
+      class: flex,
+      values: (
+        shrink-0: 0,
+        shrink-1: 1,
+      ),
+    ),
+    "flex-wrap": (
+      responsive: true,
+      property: flex-wrap,
+      class: flex,
+      values: wrap nowrap wrap-reverse,
+    ),
+    "justify-content": (
+      responsive: true,
+      property: justify-content,
+      values: (
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        between: space-between,
+        around: space-around,
+        evenly: space-evenly,
+      ),
+    ),
+    "align-items": (
+      responsive: true,
+      property: align-items,
+      values: (
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        baseline: baseline,
+        stretch: stretch,
+      ),
+    ),
+    "align-content": (
+      responsive: true,
+      property: align-content,
+      values: (
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        between: space-between,
+        around: space-around,
+        stretch: stretch,
+      ),
+    ),
+    "align-self": (
+      responsive: true,
+      property: align-self,
+      values: (
+        auto: auto,
+        start: flex-start,
+        end: flex-end,
+        center: center,
+        baseline: baseline,
+        stretch: stretch,
+      ),
+    ),
+    "order": (
+      responsive: true,
+      property: order,
+      values: (
+        first: -1,
+        0: 0,
+        1: 1,
+        2: 2,
+        3: 3,
+        4: 4,
+        5: 5,
+        last: 6,
+      ),
+    ),
+    // scss-docs-end utils-flex
+    // Margin utilities
+    // scss-docs-start utils-spacing
+    "margin":
+      (
+        responsive: true,
+        property: margin,
+        class: m,
+        values:
+          map-merge(
+            $spacers,
+            (
+              auto: auto,
+            )
+          ),
+      ),
+    "margin-x": (
+      responsive: true,
+      property: margin-right margin-left,
+      class: mx,
+      values:
+        map-merge(
+          $spacers,
+          (
+            auto: auto,
+          )
+        ),
+    ),
+    "margin-y": (
+      responsive: true,
+      property: margin-top margin-bottom,
+      class: my,
+      values:
+        map-merge(
+          $spacers,
+          (
+            auto: auto,
+          )
+        ),
+    ),
+    "margin-top": (
+      responsive: true,
+      property: margin-top,
+      class: mt,
+      values:
+        map-merge(
+          $spacers,
+          (
+            auto: auto,
+          )
+        ),
+    ),
+    "margin-end": (
+      responsive: true,
+      property: margin-right,
+      class: me,
+      values:
+        map-merge(
+          $spacers,
+          (
+            auto: auto,
+          )
+        ),
+    ),
+    "margin-bottom": (
+      responsive: true,
+      property: margin-bottom,
+      class: mb,
+      values:
+        map-merge(
+          $spacers,
+          (
+            auto: auto,
+          )
+        ),
+    ),
+    "margin-start": (
+      responsive: true,
+      property: margin-left,
+      class: ms,
+      values:
+        map-merge(
+          $spacers,
+          (
+            auto: auto,
+          )
+        ),
+    ),
+    // Negative margin utilities
+    "negative-margin":
+      (
+        responsive: true,
+        property: margin,
+        class: m,
+        values: $negative-spacers,
+      ),
+    "negative-margin-x": (
+      responsive: true,
+      property: margin-right margin-left,
+      class: mx,
+      values: $negative-spacers,
+    ),
+    "negative-margin-y": (
+      responsive: true,
+      property: margin-top margin-bottom,
+      class: my,
+      values: $negative-spacers,
+    ),
+    "negative-margin-top": (
+      responsive: true,
+      property: margin-top,
+      class: mt,
+      values: $negative-spacers,
+    ),
+    "negative-margin-end": (
+      responsive: true,
+      property: margin-right,
+      class: me,
+      values: $negative-spacers,
+    ),
+    "negative-margin-bottom": (
+      responsive: true,
+      property: margin-bottom,
+      class: mb,
+      values: $negative-spacers,
+    ),
+    "negative-margin-start": (
+      responsive: true,
+      property: margin-left,
+      class: ms,
+      values: $negative-spacers,
+    ),
+    // Padding utilities
+    "padding":
+      (
+        responsive: true,
+        property: padding,
+        class: p,
+        values: $spacers,
+      ),
+    "padding-x": (
+      responsive: true,
+      property: padding-right padding-left,
+      class: px,
+      values: $spacers,
+    ),
+    "padding-y": (
+      responsive: true,
+      property: padding-top padding-bottom,
+      class: py,
+      values: $spacers,
+    ),
+    "padding-top": (
+      responsive: true,
+      property: padding-top,
+      class: pt,
+      values: $spacers,
+    ),
+    "padding-end": (
+      responsive: true,
+      property: padding-right,
+      class: pe,
+      values: $spacers,
+    ),
+    "padding-bottom": (
+      responsive: true,
+      property: padding-bottom,
+      class: pb,
+      values: $spacers,
+    ),
+    "padding-start": (
+      responsive: true,
+      property: padding-left,
+      class: ps,
+      values: $spacers,
+    ),
+    // Gap utility
+    "gap":
+      (
+        responsive: true,
+        property: gap,
+        class: gap,
+        values: $spacers,
+      ),
+    // scss-docs-end utils-spacing
+    // Text
+    // scss-docs-start utils-text
+    "font-family":
+      (
+        property: font-family,
+        class: font,
+        values: (
+          monospace: var(--#{$prefix}font-monospace),
+        ),
+      ),
+    "font-size": (
+      rfs: true,
+      property: font-size,
+      class: fs,
+      values: $font-sizes,
+    ),
+    "font-style": (
+      property: font-style,
+      class: fst,
+      values: italic normal,
+    ),
+    "font-weight": (
+      property: font-weight,
+      class: fw,
+      values: (
+        light: $font-weight-light,
+        lighter: $font-weight-lighter,
+        normal: $font-weight-normal,
+        bold: $font-weight-bold,
+        semibold: $font-weight-semibold,
+        bolder: $font-weight-bolder,
+        800: 800,
+      ),
+    ),
+    "line-height": (
+      property: line-height,
+      class: lh,
+      values: (
+        1: 1,
+        sm: $line-height-sm,
+        base: $line-height-base,
+        lg: $line-height-lg,
+      ),
+    ),
+    "text-align": (
+      responsive: true,
+      property: text-align,
+      class: text,
+      values: (
+        start: left,
+        end: right,
+        center: center,
+      ),
+    ),
+    "text-decoration": (
+      property: text-decoration,
+      values: none underline line-through,
+    ),
+    "text-transform": (
+      property: text-transform,
+      class: text,
+      values: lowercase uppercase capitalize,
+    ),
+    "white-space": (
+      property: white-space,
+      class: text,
+      values: (
+        wrap: normal,
+        nowrap: nowrap,
+      ),
+    ),
+    "word-wrap": (
+      property: word-wrap word-break,
+      class: text,
+      values: (
+        break: break-word,
+      ),
+      rtl: false,
+    ),
+    // scss-docs-end utils-text
+    // scss-docs-start utils-color
+    "color":
+      (
+        property: color,
+        class: text,
+        local-vars: (
+          "text-opacity": 1,
+        ),
+        values:
+          map-merge(
+            $utilities-text-colors,
+            (
+              "muted": $text-muted,
+              "black-50": rgba($black, 0.5),
+              // deprecated
+              "white-50": rgba($white, 0.5),
+              // deprecated
+              "reset": inherit,
+            )
+          ),
+      ),
+    "text-opacity": (
+      css-var: true,
+      class: text-opacity,
+      values: (
+        25: 0.25,
+        50: 0.5,
+        75: 0.75,
+        100: 1,
+      ),
+    ),
+    // scss-docs-end utils-color
+    // scss-docs-start utils-bg-color
+    "background-color":
+      (
+        property: background-color,
+        class: bg,
+        local-vars: (
+          "bg-opacity": 1,
+        ),
+        values:
+          map-merge(
+            $utilities-bg-colors,
+            (
+              "transparent": transparent,
+            )
+          ),
+      ),
+    "bg-opacity": (
+      css-var: true,
+      class: bg-opacity,
+      values: (
+        10: 0.1,
+        15: 0.15,
+        20: 0.20,
+        25: 0.25,
+        50: 0.5,
+        75: 0.75,
+        100: 1,
+      ),
+    ),
+    // scss-docs-end utils-bg-color
+    "gradient":
+      (
+        property: background-image,
+        class: bg,
+        values: (
+          gradient: var(--#{$prefix}gradient),
+        ),
+      ),
+    // scss-docs-start utils-interaction
+    "user-select":
+      (
+        property: user-select,
+        values: all auto none,
+      ),
+    "pointer-events": (
+      property: pointer-events,
+      class: pe,
+      values: none auto,
+    ),
+    // scss-docs-end utils-interaction
+    // scss-docs-start utils-border-radius
+    "rounded":
+      (
+        property: border-radius,
+        responsive: true,
+        class: rounded,
+        values: (
+          null: var(--#{$prefix}border-radius),
+          0: 0,
+          1: var(--#{$prefix}border-radius-sm),
+          2: var(--#{$prefix}border-radius),
+          3: var(--#{$prefix}border-radius-lg),
+          4: var(--#{$prefix}border-radius-xl),
+          5: var(--#{$prefix}border-radius-2xl),
+          circle: 50%,
+          pill: var(--#{$prefix}border-radius-pill),
+        ),
+      ),
+    "rounded-top": (
+      property: border-top-left-radius border-top-right-radius,
+      responsive: true,
+      class: rounded-top,
+      values: (
+        null: var(--#{$prefix}border-radius),
+        0: 0,
+        1: var(--#{$prefix}border-radius-sm),
+        2: var(--#{$prefix}border-radius),
+        3: var(--#{$prefix}border-radius-lg),
+        4: var(--#{$prefix}border-radius-xl),
+        5: var(--#{$prefix}border-radius-2xl),
+        circle: 50%,
+        pill: var(--#{$prefix}border-radius-pill),
+      ),
+    ),
+    "rounded-end": (
+      property: border-top-right-radius border-bottom-right-radius,
+      responsive: true,
+      class: rounded-end,
+      values: (
+        null: var(--#{$prefix}border-radius),
+        0: 0,
+        1: var(--#{$prefix}border-radius-sm),
+        2: var(--#{$prefix}border-radius),
+        3: var(--#{$prefix}border-radius-lg),
+        4: var(--#{$prefix}border-radius-xl),
+        5: var(--#{$prefix}border-radius-2xl),
+        circle: 50%,
+        pill: var(--#{$prefix}border-radius-pill),
+      ),
+    ),
+    "rounded-bottom": (
+      property: border-bottom-right-radius border-bottom-left-radius,
+      responsive: true,
+      class: rounded-bottom,
+      values: (
+        null: var(--#{$prefix}border-radius),
+        0: 0,
+        1: var(--#{$prefix}border-radius-sm),
+        2: var(--#{$prefix}border-radius),
+        3: var(--#{$prefix}border-radius-lg),
+        4: var(--#{$prefix}border-radius-xl),
+        5: var(--#{$prefix}border-radius-2xl),
+        circle: 50%,
+        pill: var(--#{$prefix}border-radius-pill),
+      ),
+    ),
+    "rounded-start": (
+      property: border-bottom-left-radius border-top-left-radius,
+      responsive: true,
+      class: rounded-start,
+      values: (
+        null: var(--#{$prefix}border-radius),
+        0: 0,
+        1: var(--#{$prefix}border-radius-sm),
+        2: var(--#{$prefix}border-radius),
+        3: var(--#{$prefix}border-radius-lg),
+        4: var(--#{$prefix}border-radius-xl),
+        5: var(--#{$prefix}border-radius-2xl),
+        circle: 50%,
+        pill: var(--#{$prefix}border-radius-pill),
+      ),
+    ),
+    "rounded-top-left": (
+      property: border-top-left-radius,
+      responsive: true,
+      class: rounded-top-left,
+      values: (
+        null: var(--#{$prefix}border-radius),
+        0: 0,
+        1: var(--#{$prefix}border-radius-sm),
+        2: var(--#{$prefix}border-radius),
+        3: var(--#{$prefix}border-radius-lg),
+        4: var(--#{$prefix}border-radius-xl),
+        5: var(--#{$prefix}border-radius-2xl),
+        circle: 50%,
+        pill: var(--#{$prefix}border-radius-pill),
+      ),
+    ),
+    "rounded-top-right": (
+      property: border-top-right-radius,
+      responsive: true,
+      class: rounded-top-right,
+      values: (
+        null: var(--#{$prefix}border-radius),
+        0: 0,
+        1: var(--#{$prefix}border-radius-sm),
+        2: var(--#{$prefix}border-radius),
+        3: var(--#{$prefix}border-radius-lg),
+        4: var(--#{$prefix}border-radius-xl),
+        5: var(--#{$prefix}border-radius-2xl),
+        circle: 50%,
+        pill: var(--#{$prefix}border-radius-pill),
+      ),
+    ),
+    "rounded-bottom-left": (
+      property: border-bottom-left-radius,
+      responsive: true,
+      class: rounded-bottom-left,
+      values: (
+        null: var(--#{$prefix}border-radius),
+        0: 0,
+        1: var(--#{$prefix}border-radius-sm),
+        2: var(--#{$prefix}border-radius),
+        3: var(--#{$prefix}border-radius-lg),
+        4: var(--#{$prefix}border-radius-xl),
+        5: var(--#{$prefix}border-radius-2xl),
+        circle: 50%,
+        pill: var(--#{$prefix}border-radius-pill),
+      ),
+    ),
+    "rounded-bottom-right": (
+      property: border-bottom-right-radius,
+      responsive: true,
+      class: rounded-bottom-right,
+      values: (
+        null: var(--#{$prefix}border-radius),
+        0: 0,
+        1: var(--#{$prefix}border-radius-sm),
+        2: var(--#{$prefix}border-radius),
+        3: var(--#{$prefix}border-radius-lg),
+        4: var(--#{$prefix}border-radius-xl),
+        5: var(--#{$prefix}border-radius-2xl),
+        circle: 50%,
+        pill: var(--#{$prefix}border-radius-pill),
+      ),
+    ),
+    // scss-docs-end utils-border-radius
+    // scss-docs-start utils-visibility
+    "visibility":
+      (
+        property: visibility,
+        class: null,
+        values: (
+          visible: visible,
+          invisible: hidden,
+        ),
+      ),
+    //erkan eklemeler
+    "z-index":
+      (
+        property: z-index,
+        class: zindex,
+        values: (
+          n1: -1,
+          n2: -2,
+          0: 0,
+          1: 1,
+          2: 2,
+          3: 3,
+        ),
+      ),
+    "boxes": (
+      property: width height,
+      responsive: true,
+      class: box,
+      values: (
+        30: 30px,
+        40: 40px,
+        50: 50px,
+        60: 60px,
+        75: 75px,
+        100: 100px,
+        150: 150px,
+        200: 200px,
+        250: 250px,
+        300: 300px,
+        400: 400px,
+      ),
+    ),
+    "width-px": (
+      property: width,
+      class: w,
+      values: (
+        5px: 5px,
+        10px: 10px,
+        15px: 15px,
+        20px: 20px,
+        25px: 25px,
+        30px: 30px,
+        40px: 40px,
+        50px: 50px,
+        75px: 75px,
+        100px: 100px,
+        150px: 150px,
+        175px: 175px,
+        200px: 200px,
+        250px: 250px,
+        300px: 300px,
+        350px: 350px,
+        400px: 400px,
+        450px: 450px,
+        500px: 500px,
+        600px: 600px,
+        700px: 700px,
+        800px: 800px,
+      ),
+    ),
+    "min-width-px": (
+      responsive:true,
+      property: min-width,
+      class: min-w,
+      values: (
+        5px: 5px,
+        10px: 10px,
+        15px: 15px,
+        20px: 20px,
+        25px: 25px,
+        30px: 30px,
+        35px: 35px,
+        40px: 40px,
+        50px: 50px,
+        75px: 75px,
+        100px: 100px,
+        125px: 125px,
+        150px: 150px,
+        175px: 175px,
+        200px: 200px,
+        225px: 225px,
+        250px: 250px,
+        275px: 275px,
+        300px: 300px,
+        400px: 400px,
+        500px: 500px,
+        600px: 600px,
+        700px: 700px,
+        800px: 800px,
+      ),
+    ),
+    "height-px": (
+      responsive: true,
+      property: height,
+      class: h,
+      values: (
+        5px: 5px,
+        10px: 10px,
+        15px: 15px,
+        20px: 20px,
+        25px: 25px,
+        30px: 30px,
+        40px: 40px,
+        50px: 50px,
+        75px: 75px,
+        100px: 100px,
+        125px: 125px,
+        150px: 150px,
+        200px: 200px,
+        250px: 250px,
+        300px: 300px,
+        350px: 350px,
+        400px: 400px,
+        450px: 450px,
+        500px: 500px,
+        600px: 600px,
+        700px: 700px,
+        800px: 800px,
+      ),
+    ),
+    "min-height-px": (
+      responsive: true,
+      property: min-height,
+      class: min-h,
+      values: (
+        5px: 5px,
+        10px: 10px,
+        15px: 15px,
+        20px: 20px,
+        25px: 25px,
+        30px: 30px,
+        40px: 40px,
+        50px: 50px,
+        75px: 75px,
+        100px: 100px,
+        125px: 125px,
+        150px: 150px,
+        200px: 200px,
+        250px: 250px,
+        300px: 300px,
+        350px: 350px,
+        400px: 400px,
+        450px: 450px,
+        500px: 500px,
+      ),
+    ),
+    "max-height-px": (
+      responsive: true,
+      property: max-height,
+      class: max-h,
+      values: (
+        5px: 5px,
+        10px: 10px,
+        15px: 15px,
+        20px: 20px,
+        25px: 25px,
+        30px: 30px,
+        40px: 40px,
+        50px: 50px,
+        75px: 75px,
+        100px: 100px,
+        150px: 150px,
+        200px: 200px,
+        250px: 250px,
+        300px: 300px,
+        350px: 350px,
+        400px: 400px,
+        450px: 450px,
+        500px: 500px,
+      ),
+    ),
+    "animation-delay": (
+      property: animation-delay,
+      class: delay,
+      values: (
+        100ms: 0.1s,
+        200ms: 0.2s,
+        300ms: 0.3s,
+        400ms: 0.4s,
+        500ms: 0.5s,
+        600ms: 0.6s,
+        700ms: 0.7s,
+        800ms: 0.8s,
+        900ms: 0.9s,
+        1000ms: 1s,
+        1100ms: 1.1s,
+        1200ms: 1.2s,
+        1300ms: 1.3s,
+        1400ms: 1.4s,
+        1500ms: 1.5s,
+        1600ms: 1.6s,
+        1700ms: 1.7s,
+        1800ms: 1.8s,
+        1900ms: 1.9s,
+        2000ms: 2s,
+      ),
+    ),
+    "transition-delay": (
+      property: transition-delay,
+      class: t-delay,
+      values: (
+        100ms: 0.1s,
+        200ms: 0.2s,
+        300ms: 0.3s,
+        400ms: 0.4s,
+        500ms: 0.5s,
+        600ms: 0.6s,
+        700ms: 0.7s,
+        800ms: 0.8s,
+        900ms: 0.9s,
+        1000ms: 1s,
+        1100ms: 1.1s,
+        1200ms: 1.2s,
+        1300ms: 1.3s,
+        1400ms: 1.4s,
+        1500ms: 1.5s,
+        1600ms: 1.6s,
+        1700ms: 1.7s,
+        1800ms: 1.8s,
+        1900ms: 1.9s,
+        2000ms: 2s,
+      ),
+    ),
+    "mix-blend-mode": (
+      property: mix-blend-mode,
+      class: mix-blend-mode,
+      values: (
+        darken: darken,
+        difference: difference,
+        color: color,
+        lighten: lighten,
+        multiply: multiply,
+        normal: normal,
+        overlay: overlay,
+        screen: screen,
+      ),
+    ),
+    "colum-count": (
+      responsive: true,
+      property: column-count,
+      class: column-count,
+      values: (
+        2: 2,
+        3: 3,
+        4: 4,
+        5: 5,
+        6: 6
+      ),
+    ),
+    "underline-color":
+      (
+        property: text-decoration-color,
+        class: underline,
+        values:$theme-colors,
+      ),
+  )
+);
+
+//tum renkler icin class lari olustur
+$all-colors: map-merge-multiple(
+  $blues,
+  $indigos,
+  $purples,
+  $pinks,
+  $reds,
+  $oranges,
+  $yellows,
+  $greens,
+  $teals,
+  $cyans,
+  $browns,
+  $grays-erkan
+);
+$utilities: map-merge(
+  $utilities,
+  (
+    "color":
+      map-merge(
+        map-get($utilities, "color"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "color"), "values"),
+              ($all-colors)
+            ),
+        )
+      ),
+    "background-color":
+      map-merge(
+        map-get($utilities, "background-color"),
+        (
+          values:
+            map-merge(
+              map-get(map-get($utilities, "background-color"), "values"),
+              ($all-colors)
+            ),
+        )
+      ),
+  )
+);

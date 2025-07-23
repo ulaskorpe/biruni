@@ -1,0 +1,1 @@
+<x-content-list :category="$content"/>

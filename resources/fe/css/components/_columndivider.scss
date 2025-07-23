@@ -1,0 +1,73 @@
+.has-divider {
+
+    > [class^="col-"] > div {
+        
+        padding:2.4rem;
+
+        &:after {
+            position:absolute;
+            content:"";
+            display: block;
+            width: 3.6rem;
+            height: 3.6rem;
+            border-radius:54% 50%;
+            background-color: $white;;
+            background-image: url('/images/figo.svg');
+            background-size: 32%;
+            background-position: center;
+            background-repeat: no-repeat;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            top:auto;
+            bottom: -25px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            z-index:5
+        }
+    
+        @media (min-width: 768px) {
+            &.divider-bp-md {
+    
+                &:after {
+                    bottom: auto;
+                    left: 100%;
+                    top:50%;
+                    transform: translate(-50%,-50%);
+                }
+    
+            }
+        }
+    
+        @media (min-width: 992px) {
+            &.divider-bp-lg {
+    
+                &:after {
+                    bottom: auto;
+                    left: 100%;
+                    top:50%;
+                    transform: translate(-50%,-50%);
+                }
+    
+            }
+        }
+    
+        @media (min-width: 1200px) {
+            &.divider-bp-xl {
+    
+                &:after {
+                    bottom: auto;
+                    left: 100%;
+                    top:50%;
+                    transform: translate(-50%,-50%);
+                }
+    
+            }
+        }
+
+    }
+
+    > [class^="col-"]:is(:last-of-type) > div {
+        &:after {
+            display: none;
+        }
+    }
+}

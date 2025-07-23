@@ -1,0 +1,18 @@
+ul.icon-list {
+
+    list-style: none;
+
+
+    > li {
+        padding-left:30px;
+        position:relative;
+
+        > i {
+            position:absolute;
+            left:0;
+            top:-.1rem;
+            font-size:1.2rem
+        }
+    } 
+
+}

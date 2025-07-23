@@ -1,0 +1,29 @@
+@import "../../../node_modules/bootstrap/scss/functions";
+
+
+//Font family
+@import "./fontfamily";
+
+
+//variable override
+@import "./scss-override/variables";
+
+//default variables
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/variables-dark";
+
+//map override kapatiyorum
+//@import "scss-override/maps";
+
+//default maps and mixins
+@import "../../../node_modules/bootstrap/scss/maps";
+@import "../../../node_modules/bootstrap/scss/mixins";
+@import "../../../node_modules/bootstrap/scss/root";
+
+//mixin overwrite
+@import "./scss-override/mixins/container";
+
+//Components
+@import "../../../node_modules/bootstrap/scss/utilities";
+@import "../../../node_modules/bootstrap/scss/reboot";
+@import "../../../node_modules/bootstrap/scss/type";
