@@ -45,7 +45,7 @@
 @if ($isMobile)
 
     <header @class([$navbarClasses]) id="main-mobile-navbar">
-        
+
         <div class="container pe-2" aria-label="Top Navigation">
 
             <a href="{{$logoLink}}" class="me-3">
@@ -97,8 +97,8 @@
     </div>
 
     <header @class([$navbarClasses]) id="main-navbar">
-        
-        
+
+
         <div class="container d-flex align-items-center justify-content-start" aria-label="Top Navigation">
 
             <a href="{{$logoLink}}" class="me-4">
@@ -111,7 +111,7 @@
 
             <nav class="d-flex align-items-center" aria-label="Main navigation">
                 @if (session()->has('core_menus') && isset(session()->get('core_menus')['data'][app()->getLocale()]['main']))
-    
+
                     <div class="d-flex d-xl-none align-items-center">
                         <button class="btn text-dark text-hover-primary p-0 border-0 hstack gap-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#csNavbar" aria-controls="csNavbar" aria-label="Toggle navigation">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" class="bi" fill="currentColor" viewBox="0 0 16 16">
@@ -120,7 +120,7 @@
                             <span>MENÜ</span>
                         </button>
                     </div>
-    
+
                     <ul class="navbar-nav d-none d-xl-flex flex-row flex-nowrap align-items-center">
                         @foreach (session()->get('core_menus')['data'][app()->getLocale()]['main']['items'] as $item)
                         @if (count($item['child_nodes']) > 0)
@@ -174,16 +174,16 @@
                             <a href="{{$item['item_link']}}" @class([$linkClasses])>{!! $item['menu_title'] !!}</a>
                         </li>
                         @endif
-        
+
                         @endforeach
-        
+
                     </ul>
-    
+
                 @endif
-    
+
             </nav>
 
-            <div class="hstack gap-3 ms-auto">   
+            <div class="hstack gap-3 ms-auto">
                 @if (isset($settings->header_buttons[app()->getLocale()]))
                 <div class="hstack align-items-center gap-2">
                     @if ($settings->header_buttons[app()->getLocale()]['button_1']['active'])
@@ -201,7 +201,7 @@
             </div>
 
             @if (config('languages.language_bar'))
-            <div class="d-none d-xl-block ms-3 rounded bg-opacity-75 bg-dark px-3 py-2">
+            <div class="position-relative d-none d-xl-block ms-3 rounded bg-opacity-75 bg-dark px-3 py-2" style="position: fixed">
                 <x-switch-language />
             </div>
             @endif
@@ -245,9 +245,9 @@
         @endif
 
         @if (config('languages.language_bar'))
-      
+
             <x-switch-language />
-      
+
         @endif
 
         <div>
