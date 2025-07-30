@@ -201,7 +201,7 @@
             </div>
 
             @if (config('languages.language_bar'))
-            <div class="position-relative d-none d-xl-block ms-3 rounded bg-opacity-75 bg-dark px-3 py-2" style="position: fixed">
+            <div class="position-relative d-none d-xl-block ms-3 rounded   px-3 py-2" style="position: fixed">
                 <x-switch-language />
             </div>
             @endif
